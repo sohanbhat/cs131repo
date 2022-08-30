@@ -1,0 +1,73 @@
+    1  passwd Soh@n1
+    2  passwd
+    3  sudo dnf install git-all
+    4  git --version
+    5   git config --list --show-origin
+    6  git config --global user.email sohan.bhat@sjsu.edu
+    7  mk dir worksheet1
+    8  mkdir worksheet1
+    9  cd worksheet1
+   10  git init
+   11  touch history > cmds.log
+   12  ls
+   13  git status
+   14  git commit -m "First commit"
+   15  git config --global user.name "Sohan Bhat"
+   16  git commit -m "First commit"
+   17  git add cmds.log
+   18  git add history
+   19  git commit -m "First commit"
+   20  git remote add origin https://github.com/sohanbhat/worksheet1.git
+   21  git push -u origin main
+   22  git branch -M main
+   23  git push -u origin main
+   24  git branch -M main
+   25  git push -u origin main
+   26  git branch -M main
+   27  git push -u origin main
+   28  git remote set-url origin https://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@github.com/sohan.bhat@sjsu.edu/worksheet1.git
+   29  git branch -M main
+   30  git push -u origin main
+   31  git remote set-url origin https://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@github.com/sohanbhat/worksheet1.git
+   32  git branch -M main
+   33  git push -u origin main
+   34  cd `
+   35  mkdir amazon books data
+   36  cd amazon books data
+   37  cd amazonbooksdata
+   38  mkdir amazonbooks
+   39  cd amazonbooks
+   40  $ wget    https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+   41  wget    https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Books_v1_02.tsv.gz
+   42  rm -r cs131`
+   43  ls
+   44  cd worksheet1
+   45  ls
+   46  rm cmds.log
+   47  rm history
+   48  history > cmds.log
+   49  ls
+   50  git status
+   51  git remote add origin https://github.com/sohanbhat/worksheet1
+   52  git push -u origin master
+   53  git add worksheet1/*
+   54  git add cmds.log
+   55  git commit -m "Second commit"
+   56  git status
+   57  git push ./
+   58  git commit -m "Second commit"
+   59  git add ./
+   60  git commit -m "Second commit"
+   61  git push ./
+   62  cd ..
+   63  ls
+   64  rm cs131
+   65  rm -r cd131
+   66  rm -r cs131
+   67  ls
+   68  mkdir cs131
+   69  cd cs131
+   70  git init
+   71  mkdir worksheet1
+   72  cd worksheet1 
+   73  history > cmds.log
