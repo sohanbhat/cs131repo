@@ -293,7 +293,7 @@ total 0
 [38;5;33m1257[0m    [38;5;33m1520[0m    [38;5;33m221698[0m  [38;5;33m301258[0m  [38;5;33m347024[0m  [38;5;33m378[0m     [38;5;33m555[0m    [38;5;33m804[0m
 [38;5;33m1258[0m    [38;5;33m1521[0m    [38;5;33m222[0m     [38;5;33m302[0m     [38;5;33m347068[0m  [38;5;33m3784[0m    [38;5;33m557[0m    [38;5;33m805[0m
 
-7. There is a total of 73080640 kB of total memory on my service. 
+7. There is a total of 73080640 kB of total memory on my server. 
 ]0;sohan@sjsu:/proc[sohan@sjsu proc]$ head -20 meminfo
 MemTotal:       73080640 kB
 MemFree:         4387264 kB
