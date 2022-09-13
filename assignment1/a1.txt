@@ -1,18 +1,40 @@
 Script started on 2022-09-13 17:10:25-04:00
+
+2. I used "echo $HOME" to find my home directory path.
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ echo $HM[KOME
 /home/sohan
+
+3. I used "id sohan" to find my UID which is 1007. I belong to group 1007 (sohan).
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ id sohan
 uid=1007(sohan) gid=1007(sohan) groups=1007(sohan)
+
+4a. Made new directory "temp". 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ mkdir temp
+
+4b. I removed execute permissions using chmod 677 temp, which removes execute permissions for users. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ chmod 677 temp
+
+4c. I cannot cd into the directory. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cd temp
 bash: cd: temp: Permission denied
+
+4d. I am able to ls and ls -l on the directory. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ ls temp
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ ls -l temp
 total 0
+
+4e. I am unable to create files under the directory. 
+
+5a. I created directory "temp2". 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ mkdir temp2
+
+5b. I am able to move temp2 to temp3 using the mv command. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ mv temp2 temp3
+
+5b. To cp a directory, I used cp -R to recursively copy temp3 to temp1. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cp -R temp3 temp1
+
+6. I cd into /proc/ and used ls to display files within the directory. I found information about memory in meminfo. I found information about the cpu in cpuinfo. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cd [K[K[Kcd /proc/
 ]0;sohan@sjsu:/proc[sohan@sjsu proc]$ ls
 [0m[38;5;33m1[0m       [38;5;33m125853[0m  [38;5;33m1523[0m    [38;5;33m2222[0m    [38;5;33m302298[0m  [38;5;33m347075[0m  [38;5;33m3787[0m   [38;5;33m558[0m    [38;5;33m806[0m
@@ -270,6 +292,8 @@ total 0
 [38;5;33m1256[0m    [38;5;33m152[0m     [38;5;33m221629[0m  [38;5;33m301[0m     [38;5;33m347[0m     [38;5;33m3774[0m    [38;5;33m554[0m    [38;5;33m803[0m
 [38;5;33m1257[0m    [38;5;33m1520[0m    [38;5;33m221698[0m  [38;5;33m301258[0m  [38;5;33m347024[0m  [38;5;33m378[0m     [38;5;33m555[0m    [38;5;33m804[0m
 [38;5;33m1258[0m    [38;5;33m1521[0m    [38;5;33m222[0m     [38;5;33m302[0m     [38;5;33m347068[0m  [38;5;33m3784[0m    [38;5;33m557[0m    [38;5;33m805[0m
+
+7. There is a total of 73080640 kB of total memory on my service. 
 ]0;sohan@sjsu:/proc[sohan@sjsu proc]$ head -20 meminfo
 MemTotal:       73080640 kB
 MemFree:         4387264 kB
@@ -291,6 +315,11 @@ Dirty:              1472 kB
 Writeback:             0 kB
 AnonPages:        449856 kB
 Mapped:           330368 kB
+
+8. There are a total 256 processors on the server. 
+The processor architecture name is POWER8.
+The processor speed in GHz is 3.525 GHz. 
+
 ]0;sohan@sjsu:/proc[sohan@sjsu proc]$ head -20 meminfo[K[K[K[K[K[K[Kcpuinfo
 processor	: 0
 cpu		: POWER8 (architected), altivec supported
@@ -1614,6 +1643,10 @@ cpu		: POWER8 (architected), altivec supported
 clock		: 3525.000000MHz
 revision	: 2.1 (pvr 004b 0201)
 
+8. There are a total 256 processors on the server. 
+The processor architecture name is POWER8.
+The processor speed in GHz is 3.525 GHz. 
+
 timebase	: 512000000
 platform	: pSeries
 model		: IBM,8286-42A
@@ -1621,7 +1654,11 @@ machine		: CHRP IBM,8286-42A
 MMU		: Hash
 ]0;sohan@sjsu:/proc[sohan@sjsu proc]$ cd ~
 ]0;sohan@sjsu:~[sohan@sjsu ~]$ cd a1
+
+9a. Copied hashtags csv to a1 directory.
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cp /home/test/A1/downloaded_hashtags_extend.csv .
+
+9b. The size of the hashtags tweet dataset is 0.00782218 GB. I had to divide by 10E9. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ ls -l
 total 7768
 -rw-rw-r-- 1 sohan sohan   81920 Sep 13 17:12 a1.txt
@@ -1629,24 +1666,48 @@ total 7768
 drw-rwxrwx 2 sohan sohan       6 Sep 13 17:10 [0m[48;5;10;38;5;21mtemp[0m
 drwxrwxr-x 2 sohan sohan       6 Sep 13 17:11 [38;5;33mtemp1[0m
 drwxrwxr-x 2 sohan sohan       6 Sep 13 17:11 [38;5;33mtemp3[0m
+
+9c. There 110350 lines in the dataset. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ wc downloaded_hashtags_extend.csv
  110350  220699 7822180 downloaded_hashtags_extend.csv
-]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ head -2 wc downloaded_hashtags_extend.csv[1Pdownloaded_hashtags_extend.csv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdownloaded_hashtags_extend.csv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdownloaded_hashtags_extend.csv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ head -2 wc downloaded_hashtags_extend.csv[1Pdownloaded_hashtags_extend.csv
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdownloaded_hashtags_extend.csv
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdownloaded_hashtags_extend.csv
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
 author,hashtags,date,id
 308045021,awesomepeopleontwitter,2022-04-30 23:18:45+00:00,1520543208614334465
-]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cut -d "," -f2 downloaded_hashtags_extend.csv | grep -i great |  wc -l
+
+10. A count of 57 instances were found for case-insensitive word "great". 
+]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cut -d "," -f2 downloaded_hashtags_extend.csv | grep -i great | 
+ wc -l
 57
+
+11. The file has UTF-8 Unicode text encoding. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ file downloaded_hashtags_extend.csv
 downloaded_hashtags_extend.csv: UTF-8 Unicode text
-]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ iconv -f UTF-8 -t ascii//TRANSLIT downloaded_hashtags_extend.csvv >> conversionASCI[K[K[K[KASCII
+
+12. Used iconv to convert the tweet file from UTF-8 to ascii. 
+]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ iconv -f UTF-8 -t ascii//TRANSLIT downloaded_hashtags_extend.csv
+v >> conversionASCI[K[K[K[KASCII
+
+13a. Used head -1 to get the column names from the file. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ head -1 downloaded_hashtags_extend.csv
 author,hashtags,date,id
+
+13b. There are 362 unique users in the hashtags file. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cut -d "," -f1 downloaded_hashtags_extend.csv | uniq | wc -l
 362
+
+13c. There are 66178 unique tweets in the file. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cut -d "," -f4 downloaded_hashtags_extend.csv | uniq | wc -l
 66178
+
+13d. There are 101804 unique hashtags in the file. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cut -d "," -f2 downloaded_hashtags_extend.csv | uniq | wc -l
 101804
+
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ exit
 
 Script done on 2022-09-13 17:15:10-04:00
+
