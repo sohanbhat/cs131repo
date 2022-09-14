@@ -33,7 +33,7 @@ touch: cannot touch '/temp': Permission denied
 5b. I am able to move temp2 to temp3 using the mv command. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ mv temp2 temp3
 
-5b. To cp a directory, I used cp -R to recursively copy temp3 to temp1. 
+5c. To cp a directory, I used cp -R to recursively copy temp3 to temp1. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cp -R temp3 temp1
 
 6. I cd into /proc/ and used ls to display files within the directory. I found information about memory in meminfo. I found information about the cpu in cpuinfo. 
@@ -318,9 +318,9 @@ Writeback:             0 kB
 AnonPages:        449856 kB
 Mapped:           330368 kB
 
-8. There are a total 256 processors on the server. 
-The processor architecture name is POWER8.
-The processor speed in GHz is 3.525 GHz. 
+8a. There are a total 256 processors on the server. 
+8b. The processor architecture name is POWER8.
+8c. The processor speed in GHz is 3.525 GHz. 
 
 ]0;sohan@sjsu:/proc[sohan@sjsu proc]$ head -20 meminfo[K[K[K[K[K[K[Kcpuinfo
 processor	: 0
@@ -1645,9 +1645,9 @@ cpu		: POWER8 (architected), altivec supported
 clock		: 3525.000000MHz
 revision	: 2.1 (pvr 004b 0201)
 
-8. There are a total 256 processors on the server. 
-The processor architecture name is POWER8.
-The processor speed in GHz is 3.525 GHz. 
+8a. There are a total 256 processors on the server. 
+8b. The processor architecture name is POWER8.
+8c. The processor speed in GHz is 3.525 GHz. 
 
 timebase	: 512000000
 platform	: pSeries
@@ -1673,6 +1673,7 @@ drwxrwxr-x 2 sohan sohan       6 Sep 13 17:11 [38;5;33mtemp3[0m
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ wc downloaded_hashtags_extend.csv
  110350  220699 7822180 downloaded_hashtags_extend.csv
 
+
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ head -2 wc downloaded_hashtags_extend.csv[1Pdownloaded_hashtags_extend.csv
 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdownloaded_hashtags_extend.csv
 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdownloaded_hashtags_extend.csv
@@ -1680,10 +1681,13 @@ drwxrwxr-x 2 sohan sohan       6 Sep 13 17:11 [38;5;33mtemp3[0m
 author,hashtags,date,id
 308045021,awesomepeopleontwitter,2022-04-30 23:18:45+00:00,1520543208614334465
 
-10. A count of 57 instances were found for case-insensitive word "great". 
+
+10. 57 instances were found for word "great" (case-insensitive). 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ cut -d "," -f2 downloaded_hashtags_extend.csv | grep -i great | 
  wc -l
 57
+
+Used the following link to learn more about cut and grep: https://stackoverflow.com/questions/67463703/shell-number-of-string-occurrences-in-a-column-using-grep
 
 11. The file has UTF-8 Unicode text encoding. 
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ file downloaded_hashtags_extend.csv
@@ -1712,4 +1716,5 @@ author,hashtags,date,id
 ]0;sohan@sjsu:~/a1[sohan@sjsu a1]$ exit
 
 Script done on 2022-09-13 17:15:10-04:00
+
 
