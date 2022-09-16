@@ -1,20 +1,17 @@
-Script started on 2022-09-15 23:47:56-04:00
-]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3[A[C[C[C[C[C[C[C4
-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C2
-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[19Phead -2 amazon_reviews_us_Books_v1_02.tsv
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P amazon_reviews_us_Books_v1_02.tsv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1 amazon_reviews_us_Books_v1_02.tsv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Script started on 2022-09-16 00:02:21-04:00
+]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ head -2 amazon_reviews_us_Books_v1_02.tsv
 marketplace	customer_id	review_id	product_id	product_parent	product_title	product_category	star_rating	helpful_votes	total_votes	vine	verified_purchase	review_headline	review_body	review_date
-]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ head -1 amazon_reviews_us_Books_v1_02.tsv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccut -f4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3[A[C[C[C[C[C[C[C2
+US	12076615	RQ58W7SMO911M	0385730586	122662979	Sisterhood of the Traveling Pants (Book 1)	Books	4	2	3	N	N	this book was a great learning novel!	this boook was a great one that you could learn from. it not only teaches the imponrtance of family and their values but it also deals with basic issues that teens and some kids even deal with.  this book is about 4 best friends who are for the first time in their lives spending their summer apart. one day they are all in one of the girls rooms and finds a pair of pants that were tucked away in her closet.  once all four  of them try them on they realize that there is really something special about these pants.  seeming as how all 4 girls are differnt shapes and sizes and somehow the pants fit all of them,  they realize that these pants were the start of something special.  immediatley following they decided to make up certian rules abut the pants such as you must write the best thing u did while wearing the pants over your summer on the right leg and also some silly things such as to \\"never pick yuor nose while wearing the pants.\\"  this book follows the girls throuh their summers in differnt places of the world and through all of the different obstacles that life takes them through. it can really teach you alot not only about what is going on around you but most imporntantly about yuorself.  i would give this book 4 stars and would reccommend it to anyone who seems the slihgtest bit interested.	2005-10-14
+]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ head -2 amazon_reviews_us_Books_v1_02.tsv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Pistory > cmds.logcut -f4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3[A[C[C[C[C[C[C[C2
 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
   21922 50122160
    9964 50732546
    2664 52615377
-]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3[A[C[19Phead -1 amazon_reviews_us_Books_v1_02.tsv
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccut -f4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3
+]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3[A[C[19Phead -2 amazon_reviews_us_Books_v1_02.tsv
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Pistory > cmds.logcut -f4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c |  sort -nr | head -3
    4625 043935806X
    3739 0439139597
    2666 0525947647
-]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ hsi[K[Kistory > cmds.log
-]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ exit
+]0;sohan@sjsu:~/amazon/cs131[sohan@sjsu cs131]$ cd [K[K[Kcd .. [K[K[K[K[K[Kexit
 
-Script done on 2022-09-15 23:50:45-04:00
+Script done on 2022-09-16 00:05:21-04:00
