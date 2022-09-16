@@ -1,2 +1,5 @@
-    8  script w3.txt
-    9  history > cmds.log
+    9  script ws3.txt
+   10  head -2 amazon_reviews_us_Books_v1_02.tsv
+   11  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | head -3
+   12  cut -f4 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | head -3
+   13  history > cmds.log
