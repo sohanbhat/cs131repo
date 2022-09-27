@@ -1,5 +1,6 @@
 Script started on 2022-09-27 15:13:58-04:00
-0. Excel files use tab characters as delimeters, allowing the tweet text with all of its newlines to be displayed within a single cell in a given row. 
+0. Excel files use tab characters as delimeters, allowing the tweet text with all of its newlines to be displayed within a single cell in a given row.
+ 
 1. Top 10 Users who replied the most to other users, using awk to filter out users replying to themselves and grep to filter only tweets which were replies.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
     106 380648579
@@ -78,7 +79,7 @@ Script started on 2022-09-27 15:13:58-04:00
     191 putinwarcriminal
     181 bcpoli
 
-8.7. 30 most frequently used hashtags in quoted tweets, used grep to filter for quoted and used cut and tr to replace commas with new line and omit quote characters,and make all letters lowercase. Used sort and uniq for getting counts.
+8. 30 most frequently used hashtags in quoted tweets, used grep to filter for quoted and used cut and tr to replace commas with new line and omit quote characters,and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 |  tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr || head -10
     241 covid19
     151 standwithukraine
