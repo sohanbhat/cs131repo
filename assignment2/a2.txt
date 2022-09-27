@@ -1,4 +1,6 @@
 Script started on 2022-09-27 15:13:58-04:00
+0. Excel files use tab characters as delimeters, allowing the tweet text with all of its newlines to be displayed within a single cell in a given row. 
+1. Top 10 Users who replied the most to other users, using awk to filter out users replying to themselves and grep to filter only tweets which were replies.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
     106 380648579
     104 18831926
@@ -10,6 +12,8 @@ Script started on 2022-09-27 15:13:58-04:00
      32 172323296
      27 117810351
      19 1573800344
+
+2. Top 10 Users who got the most replies from other users, using awk to filter out users who replied to themselves and grep to filter for only tweets that were replies.  
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f6 | sort | uniq -c | sort -nr | head -10
     112 18831926
     107 380648579
@@ -21,6 +25,8 @@ Script started on 2022-09-27 15:13:58-04:00
      30 29447428
      30 1240682348120866816
      29 117810351
+
+3. Top 10 Users who retweeted the most other tweets, using grep to filter for retweets and cut. 
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f22 | sort | uniq -c | sort -nr | head -10
    2065 45379403
    1678 77726331
@@ -32,6 +38,8 @@ Script started on 2022-09-27 15:13:58-04:00
    1216 832019161454817280
    1159 29447428
    1139 1060440219097423872
+
+5. 30 most frequently used Hashtags, found using cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts. 
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -11 | tail -110
    2910 ukraine
    1935 covid19
@@ -43,6 +51,8 @@ Script started on 2022-09-27 15:13:58-04:00
     536 putinhitler
     491 russian
     480 omicron
+
+6. 30 most frequently used hashtags in retweets, used grep to filter for retweets and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f44 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nnr | head -11 | tail -10
    2563 ukraine
    1334 covid19
@@ -54,6 +64,8 @@ Script started on 2022-09-27 15:13:58-04:00
     355 omicron
     329 kyiv
     319 covid
+
+7. 30 most frequently used hashtags in replies, used grep to filter for replies and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_nolf2.tsv | cut -ff4 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort --nr | head -10
     883 fbpe
     876 followbackfriday
@@ -65,6 +77,8 @@ Script started on 2022-09-27 15:13:58-04:00
     207 boycottrussia
     191 putinwarcriminal
     181 bcpoli
+
+8.7. 30 most frequently used hashtags in quoted tweets, used grep to filter for quoted and used cut and tr to replace commas with new line and omit quote characters,and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 |  tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr || head -10
     241 covid19
     151 standwithukraine
