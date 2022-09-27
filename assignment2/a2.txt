@@ -1,5 +1,5 @@
-Script started on 2022-09-26 23:57:07-04:00
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_original_nolf2.tsv | cut -f2 | sort | uniq -c | sort -nr | head -11
+Script started on 2022-09-27 15:13:58-04:00
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
     106 380648579
     104 18831926
      83 16050065
@@ -10,8 +10,7 @@ Script started on 2022-09-26 23:57:07-04:00
      32 172323296
      27 117810351
      19 1573800344
-     19 1229752606714728454
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_original_nolf2.tsv | cut -f6 | sort | uniq -c | sort -nr | head -10
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f6 | sort | uniq -c | sort -nr | head -10
     112 18831926
     107 380648579
      83 16050065
@@ -22,7 +21,7 @@ Script started on 2022-09-26 23:57:07-04:00
      30 29447428
      30 1240682348120866816
      29 117810351
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f2 | sort | uniq -c | sort -nr | head -10
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f22 | sort | uniq -c | sort -nr | head -10
    2065 45379403
    1678 77726331
    1641 870244616003403781
@@ -33,130 +32,50 @@ Script started on 2022-09-26 23:57:07-04:00
    1216 832019161454817280
    1159 29447428
    1139 1060440219097423872
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | sort | uniq -c | sort -nr | head -31 | tail -30
-   1266 Ukraine
-    945 COVID19
-    870 LongCovid
-    833 "FBPE,FollowBackFriday"
-    320 Russia
-    305 BREAKING
-    257 PMQs
-    208 auspol
-    181 StandWithUkraine
-    177 AmiesMovieRating
-    176 Omicron
-    168 Mariupol
-    136 Kyiv
-    135 BA2
-    122 "Russia,Ukraine"
-    120 COVID
-    118 Bales2022FilmChallenge
-    111 Putin
-    108 COVIDisAirborne
-    107 "PutinHitler,StandWithUkraine,PutinHitler,PutinWarCriminal,StopPutinNOW,RussiaSanctions,BoycottRussia"
-    107 ClimateCrisis
-    106 BoycottATP
-    105 Russian
-     98 "cathrynhartt,harttandsoul,actor,actorslife"
-     97 Covid19
-     93 Partygate
-     87 TikTok
-     85 longcovid
-     80 Ottawa
-     79 Brexit
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f4 | sort | uniq -c | sort -nr | head -31 | tail -30
-   1165 Ukraine
-    811 LongCovid
-    782 COVID19
-    304 BREAKING
-    301 Russia
-    197 auspol
-    166 PMQs
-    161 Omicron
-    161 Mariupol
-    133 Kyiv
-    132 StandWithUkraine
-    131 BA2
-    118 "Russia,Ukraine"
-    112 COVID
-     97 Covid19
-     93 Russian
-     84 longcovid
-     78 COVIDisAirborne
-     76 Partygate
-     74 MitchPlease
-     72 "Ukraine,Russia"
-     72 Brexit
-     70 UPDATE
-     67 SOTU
-     66 insiders
-     65 Putin
-     64 covid19
-     61 Ukrainian
-     61 Oscars
-     59 DailyCovidUpdate
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_nolf2.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
-    832 "FBPE,FollowBackFriday"
-    106 COVID19
-    106 BoycottATP
-    105 "PutinHitler,StandWithUkraine,PutinHitler,PutinWarCriminal,StopPutinNOW,RussiaSanctions,BoycottRussia"
-     69 ClimateCrisis
-     50 "J6T,J6TraitorSaysWhat"
-     49 LongCovid
-     42 Ottawa
-     35 DowningStreetParties
-     31 Ukraine
-     29 N95
-     27 TEAMMOLLY
-     26 btc
-     25 Putin
-     21 "FBPE,FBPPR,FollowBackFriday"
-     19 TrumpGQPdeathKKKult
-     19 COVIDisAirborne
-     18 StandWithUkraine
-     18 RejoinEU
-     18 CrazyTown
-     17 VaccineSideEffects
-     16 ClimateEmergency
-     15 ToyFair2022
-     15 "FBPE,FollowBackFriday,TakeBackDemocracy"
-     15 FAFO
-     15 "bcpoli,bced"
-     14 ScottytheFailure
-     14 "COVID19BC,bcpoli"
-     13 "PutinHitler,StandWithUkraine"
-     13 MLKDay
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
-     28 COVID19
-     24 HousingCrisis
-     23 Ukraine
-     20 JimCrowGOP
-     20 COVID19AB
-     20 "BDS,FreePalestine"
-     16 VaccineSideEffects
-     16 ClimateCrisis
-     15 Putin
-     15 "ableg,covid19ab"
-     14 TrumpGQPdeathKKKult
-     14 Antisemitism
-     13 RipCity
-     12 MaskItOrCasket
-     12 ChefsForUkraine
-     12 ableg
-     10 VITT
-     10 SocialismOrBarbarism
-     10 Russia
-     10 "ableg,COVID19AB"
-     10 "ableg,abed,covid19ab"
-      9 StandWithUkraine
-      9 "ableg,abed,COVID19AB"
-      8 "NAZI,UKRAINE"
-      8 MLKDay
-      8 LongCovid
-      8 FreePalestine
-      8 CrazyTown
-      8 AbolishPolice
-      7 TheView
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -11 | tail -110
+   2910 ukraine
+   1935 covid19
+   1317 longcovid
+   1140 russia
+    897 followbackfriday
+    895 fbpe
+    794 standwithukraine
+    536 putinhitler
+    491 russian
+    480 omicron
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f44 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nnr | head -11 | tail -10
+   2563 ukraine
+   1334 covid19
+   1151 longcovid
+   1053 russia
+    425 breaking
+    412 russian
+    368 auspol
+    355 omicron
+    329 kyiv
+    319 covid
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_nolf2.tsv | cut -ff4 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort --nr | head -10
+    883 fbpe
+    876 followbackfriday
+    429 putinhitler
+    319 standwithukraine
+    291 covid19
+    216 stopputinnow
+    211 russiasanctions
+    207 boycottrussia
+    191 putinwarcriminal
+    181 bcpoli
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 |  tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr || head -10
+    241 covid19
+    151 standwithukraine
+    140 votefordout
+    124 ableg
+    119 covid19ab
+    115 genocide
+    105 onpoli
+    100 nevervoteconservative
+     93 bcpoli
+     86 covidisairborne
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ exit
 
-Script done on 2022-09-26 23:58:59-04:00
+Script done on 2022-09-27 15:14:45-04:00
