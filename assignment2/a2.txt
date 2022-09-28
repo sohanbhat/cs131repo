@@ -1,6 +1,6 @@
 Script started on 2022-09-27 15:13:58-04:00
-0. Excel files use tab characters as delimeters, allowing the tweet text with all of its newlines to be displayed within a single cell in a given row.
- 
+0. Excel files use quotation marks to distinguish when a field value starts and ends. As a result, newline characters are ignored. 
+
 1. Top 10 Users who replied the most to other users, using awk to filter out users replying to themselves and grep to filter only tweets which were replies.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
     106 380648579
