@@ -4,94 +4,94 @@ newline characters in the tweet text row, which would be selected using cut.
 
 1. Top 10 Users who replied the most to other users, using awk to filter out users replying to themselves and grep to filter only tweets which were replies.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
-    106 380648579
-    104 18831926
-     83 16050065
-     45 1240682348120866816
-     35 1094971056358637568
-     34 140496030
-     34 1387010761994682371
-     32 172323296
-     27 117810351
-     19 1573800344
+    106 replies for user 380648579
+    104 replies for user 18831926
+     83 replies for user  16050065
+     45 replies for user 1240682348120866816
+     35 replies for user 1094971056358637568
+     34 replies for user 140496030
+     34 replies for user 1387010761994682371
+     32 replies for user 172323296
+     27 replies for user  117810351
+     19 replies for user 1573800344
 
 2. Top 10 Users who got the most replies from other users, using awk to filter out users who replied to themselves and grep to filter for only tweets that were replies.  
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f6 | sort | uniq -c | sort -nr | head -10
-    112 18831926
-    107 380648579
-     83 16050065
-     45 3453306553
-     37 1094971056358637568
-     34 140496030
-     32 172323296
-     30 29447428
-     30 1240682348120866816
-     29 117810351
+    112 replies received for user 18831926
+    107 replies received for user 380648579
+     83 replies received for user 16050065
+     45 replies received for user 3453306553
+     37 replies received for user 1094971056358637568
+     34 replies received for user 140496030
+     32 replies received for user 172323296
+     30 replies received for user 29447428
+     30 replies received for user 1240682348120866816
+     29 replies received for user 117810351
 
 3. Top 10 Users who retweeted the most other tweets, using grep to filter for retweets and cut. 
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f22 | sort | uniq -c | sort -nr | head -10
-   2065 45379403
-   1678 77726331
-   1641 870244616003403781
-   1582 1028022611324747776
-   1312 711608180535640064
-   1281 139109800
-   1234 177400353
-   1216 832019161454817280
-   1159 29447428
-   1139 1060440219097423872
+   2065 retweets for user 45379403
+   1678 retweets for user 77726331
+   1641 retweets for user 870244616003403781
+   1582 retweets for user 1028022611324747776
+   1312 retweets for user 711608180535640064
+   1281 retweets for user 139109800
+   1234 retweets for user 177400353
+   1216 retweets for user 832019161454817280
+   1159 retweets for user 29447428
+   1139 retweets for user 1060440219097423872
 
 5. 30 most frequently used Hashtags, found using cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts. 
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -11 | tail -110
-   2910 ukraine
-   1935 covid19
-   1317 longcovid
-   1140 russia
-    897 followbackfriday
-    895 fbpe
-    794 standwithukraine
-    536 putinhitler
-    491 russian
-    480 omicron
+   2910 hashtags for ukraine
+   1935 hashtags for covid19
+   1317 hashtags for longcovid
+   1140 hashtags for russia
+    897 hashtags for followbackfriday
+    895 hashtags for fbpe
+    794 hashtags for standwithukraine
+    536 hashtags for putinhitler
+    491 hashtags for russian
+    480 hashtags for omicron
 
 6. 30 most frequently used hashtags in retweets, used grep to filter for retweets and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f44 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nnr | head -11 | tail -10
-   2563 ukraine
-   1334 covid19
-   1151 longcovid
-   1053 russia
-    425 breaking
-    412 russian
-    368 auspol
-    355 omicron
-    329 kyiv
-    319 covid
+   2563 retweet hashtags of ukraine
+   1334 retweet hashtags of covid19
+   1151 retweet hashtags of longcovid
+   1053 retweet hashtags of russia
+    425 retweet hashtags of breaking
+    412 retweet hashtags of russian
+    368 retweet hashtags of auspol
+    355 retweet hashtags of omicron
+    329 retweet hashtags of kyiv
+    319 retweet hashtags of covid
 
 7. 30 most frequently used hashtags in replies, used grep to filter for replies and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_nolf2.tsv | cut -ff4 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort --nr | head -10
-    883 fbpe
-    876 followbackfriday
-    429 putinhitler
-    319 standwithukraine
-    291 covid19
-    216 stopputinnow
-    211 russiasanctions
-    207 boycottrussia
-    191 putinwarcriminal
-    181 bcpoli
+    883 reply hashtags of fbpe
+    876 reply hashtags of followbackfriday
+    429 reply hashtags of putinhitler
+    319 reply hashtags of standwithukraine
+    291 reply hashtags of covid19
+    216 reply hashtags of stopputinnow
+    211 reply hashtags of russiasanctions
+    207 reply hashtags of boycottrussia
+    191 reply hashtags of putinwarcriminal
+    181 reply hashtags of bcpoli
 
 8. 30 most frequently used hashtags in quoted tweets, used grep to filter for quoted and used cut and tr to replace commas with new line and omit quote characters,and make all letters lowercase. Used sort and uniq for getting counts.
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 |  tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr || head -10
-    241 covid19
-    151 standwithukraine
-    140 votefordout
-    124 ableg
-    119 covid19ab
-    115 genocide
-    105 onpoli
-    100 nevervoteconservative
-     93 bcpoli
-     86 covidisairborne
+    241 quoted hashtags of covid19
+    151 quoted hashtags of standwithukraine
+    140 quoted hashtags of votefordout
+    124 quoted hashtags of ableg
+    119 quoted hashtags of covid19ab
+    115 quoted hashtags of genocide
+    105 quoted hashtags of onpoli
+    100 quoted hashtags of nevervoteconservative
+     93 quoted hashtags of bcpoli
+     86 quoted hashtags of covidisairborne
 ]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ exit
 
 Script done on 2022-09-27 15:14:45-04:00
