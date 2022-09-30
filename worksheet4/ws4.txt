@@ -1,0 +1,68 @@
+Script started on 2022-09-30 00:06:21-04:00
+1. Created aliases l and w and added them to bashrc file below. 
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ alias l='ls -latr'
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ alias w='ls -la | wrc'
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ vi ~/.bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+alias l='ls -latr'
+alias w='ls -la | wc'
+
+2. Create CUSTOMERS and PRODUCTS directory using mkdir. 
+sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ mkdir CUSTOMERS PRODUCTS
+
+3. Grepped for lines containing three unique customer ids (29732693, 27925116, 52534781) and added to CUSTOMERS dir. 
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$  grep "29732693" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/29732693.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$  grep "27925116" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/27925116.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$  grep "52534781" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/52534781.txt
+
+4. Grepped for lines containing three unique product ids (1581603681, 1592285570, 0375757996) and added to PRODUCTS dir. 
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ grep "1581603681" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > PRODUCTS/1581603681.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ grep "1592285570" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > PRODUCTS/1592285570.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ grep "0375757996" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > PRODUCTS/0375757996.txt
+
+Used for following link as reference for mean of column: https://stackoverflow.com/questions/3122442/how-do-i-calculate-the-mean-of-a-column
+
+5a. Average for CUSTOMERS/29732693.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/29732693.txt
+3
+
+5b. Average for CUSTOMERS/27925116.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/29732693.txtCUSTOMERS/27925116.txt
+24
+
+5c. Average for CUSTOMERS/52534781.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/27925116.txtCUSTOMERS/52534781.txt
+16
+
+5d. Average for PRODUCTS/1581603681.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/52534781.txtPRODUCTS/1581603681.txt
+5.25
+
+5e. Average for PRODUCTS/1592285570.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1581603681.txtPRODUCTS/1592285570.txt
+3.875
+
+5f. Average for PRODUCTS/0375757996.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1592285570.txt PRODUCTS/0375757996.txt
+29.6667
+
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ exit
+
+Script done on 2022-09-30 00:10:33-04:00
+
