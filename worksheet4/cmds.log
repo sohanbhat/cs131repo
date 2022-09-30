@@ -1,2 +1,17 @@
-   54  script w4.txt
-   55  history > cmds.log
+   54  alias l='ls -latr'
+   55  alias w='ls -la | wc'
+   56  vi ~/.bashrc
+   57  mkdir CUSTOMERS PRODUCTS
+   58  grep "29732693" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/29732693.txt
+   59  grep "27925116" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/27925116.txt
+   60  grep "52534781" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/52534781.txt
+   61  grep "1581603681" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > PRODUCTS/1581603681.txt
+   62  grep "1592285570" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > PRODUCTS/1592285570.txt
+   63  grep "0375757996" amazon_reviews_us_Books_v1_02.tsv | cut -f9 > PRODUCTS/0375757996.txt
+   64  awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/29732693.txt
+   65  awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/27925116.txt
+   66  awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/52534781.txt
+   67  awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1581603681.txt
+   68  awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1592285570.txt
+   69  awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/0375757996.txt
+   70  history > cmds.log

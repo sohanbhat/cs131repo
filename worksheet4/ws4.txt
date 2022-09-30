@@ -43,23 +43,23 @@ Used for following link as reference for mean of column: https://stackoverflow.c
 3
 
 5b. Average for CUSTOMERS/27925116.txt
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/29732693.txtCUSTOMERS/27925116.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/27925116.txt
 24
 
 5c. Average for CUSTOMERS/52534781.txt
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/27925116.txtCUSTOMERS/52534781.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/52534781.txt
 16
 
 5d. Average for PRODUCTS/1581603681.txt
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' CUSTOMERS/52534781.txtPRODUCTS/1581603681.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1581603681.txt
 5.25
 
 5e. Average for PRODUCTS/1592285570.txt
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1581603681.txtPRODUCTS/1592285570.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1592285570.txt
 3.875
 
 5f. Average for PRODUCTS/0375757996.txt
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/1592285570.txt PRODUCTS/0375757996.txt
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{ sum += $1 } END { print sum/NR }' PRODUCTS/0375757996.txt
 29.6667
 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ exit
