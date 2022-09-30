@@ -1,7 +1,7 @@
 Script started on 2022-09-30 00:06:21-04:00
 1. Created aliases l and w and added them to bashrc file below. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ alias l='ls -latr'
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ alias w='ls -la | wrc'
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ alias w='ls -la | wc'
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ vi ~/.bashrc
 
 # Source global definitions
