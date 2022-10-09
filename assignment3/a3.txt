@@ -1,6 +1,6 @@
-Script started on 2022-10-08 21:29:01-04:00
+Script started on 2022-10-08 21:46:54-04:00
 ]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ grep type=replied_to downloaded_tweets_extend_original_nolf2.tsvv |  cut -f6,2 | awk '$1!=$2{print $2,$1}' > replies_cleaned.tsv
-]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ sed 's/\t/,/g' replies_cleaned.tsv > replies_cleaned.csv
+]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ sed 's/ /,/g' replies_cleaned.tsv > replies_cleaned.csv
 ]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ grep type=replied_to downloaded_tweets_extend_original_nolf2.tsvv |  cut -f6,2 | awk '$1!=$2{print $2}' | sort -n | uniq -c | awk '{print $1}' |  sort -n | uniq -c | awk '$2>=3{print $0}' > reply_bins.tsv
 ]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ sed  's/^ *//g' reply_bins.tsv > replies_bins_no_spaces.tsv
 ]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ sed 's/ /,/g' replies_bins_no_spaces.tsv > replies_bins_no_spacees.csv
@@ -69,4 +69,4 @@ Script started on 2022-10-08 21:29:01-04:00
 > เจ้าแก้มก้อน
 ]0;sohan@sjsu:~/A2/A3[sohan@sjsu A3]$ exit
 
-Script done on 2022-10-08 21:29:49-04:00
+Script done on 2022-10-08 21:47:41-04:00
