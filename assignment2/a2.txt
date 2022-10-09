@@ -3,7 +3,8 @@ Script started on 2022-09-27 15:13:58-04:00
 newline characters in the tweet text row, which would be selected using cut. 
 
 1. Top 10 Users who replied the most to other users, using awk to filter out users replying to themselves and grep to filter only tweets which were replies.
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.t
+tsv | grep type=replied_to | cut -f2 | sort | uniq -c | sort -nr | head -10
     106 replies for user 380648579
     104 replies for user 18831926
      83 replies for user  16050065
@@ -16,7 +17,8 @@ newline characters in the tweet text row, which would be selected using cut.
      19 replies for user 1573800344
 
 2. Top 10 Users who got the most replies from other users, using awk to filter out users who replied to themselves and grep to filter for only tweets that were replies.  
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.ttsv | grep type=replied_to | cut -f6 | sort | uniq -c | sort -nr | head -10
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ awk '$2!=$6{print $0}' downloaded_tweets_extend_original_nolf2.t
+tsv | grep type=replied_to | cut -f6 | sort | uniq -c | sort -nr | head -10
     112 replies received for user 18831926
     107 replies received for user 380648579
      83 replies received for user 16050065
@@ -29,7 +31,8 @@ newline characters in the tweet text row, which would be selected using cut.
      29 replies received for user 117810351
 
 3. Top 10 Users who retweeted the most other tweets, using grep to filter for retweets and cut. 
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f22 | sort | uniq -c | sort -nr | head -10
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f2
+2 | sort | uniq -c | sort -nr | head -10
    2065 retweets for user 45379403
    1678 retweets for user 77726331
    1641 retweets for user 870244616003403781
@@ -41,8 +44,9 @@ newline characters in the tweet text row, which would be selected using cut.
    1159 retweets for user 29447428
    1139 retweets for user 1060440219097423872
 
-5. 30 most frequently used Hashtags, found using cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts. 
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -11 | tail -110
+5. 30 most frequently used Hashtags, found using cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts (displaying top 10). 
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\
+\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -31 | tail -30
    2910 hashtags for ukraine
    1935 hashtags for covid19
    1317 hashtags for longcovid
@@ -54,8 +58,10 @@ newline characters in the tweet text row, which would be selected using cut.
     491 hashtags for russian
     480 hashtags for omicron
 
-6. 30 most frequently used hashtags in retweets, used grep to filter for retweets and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts.
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f44 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nnr | head -11 | tail -10
+6. 30 most frequently used hashtags in retweets, used grep to filter for retweets and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts (displaying top 10).
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=retweeted downloaded_tweets_extend_nolf2.tsv | cut -f4
+4 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -n
+nr | head -31 | tail -30
    2563 retweet hashtags of ukraine
    1334 retweet hashtags of covid19
    1151 retweet hashtags of longcovid
@@ -67,8 +73,10 @@ newline characters in the tweet text row, which would be selected using cut.
     329 retweet hashtags of kyiv
     319 retweet hashtags of covid
 
-7. 30 most frequently used hashtags in replies, used grep to filter for replies and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts.
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_nolf2.tsv | cut -ff4 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort --nr | head -10
+7. 30 most frequently used hashtags in replies, used grep to filter for replies and used cut and tr to replace commas with new line and omit quote characters, and make all letters lowercase. Used sort and uniq for getting counts (displaying top 10).
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=replied_to downloaded_tweets_extend_nolf2.tsv | cut -f
+f4 | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -
+-nr | head -30
     883 reply hashtags of fbpe
     876 reply hashtags of followbackfriday
     429 reply hashtags of putinhitler
@@ -80,8 +88,10 @@ newline characters in the tweet text row, which would be selected using cut.
     191 reply hashtags of putinwarcriminal
     181 reply hashtags of bcpoli
 
-8. 30 most frequently used hashtags in quoted tweets, used grep to filter for quoted and used cut and tr to replace commas with new line and omit quote characters,and make all letters lowercase. Used sort and uniq for getting counts.
-]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 |  tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr || head -10
+8. 30 most frequently used hashtags in quoted tweets, used grep to filter for quoted and used cut and tr to replace commas with new line and omit quote characters,and make all letters lowercase. Used sort and uniq for getting counts (displaying top 10).
+]0;sohan@sjsu:~/A2[sohan@sjsu A2]$ grep type=quoted downloaded_tweets_extend_nolf2.tsv | cut -f4 | 
+ tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr |
+| head -30
     241 quoted hashtags of covid19
     151 quoted hashtags of standwithukraine
     140 quoted hashtags of votefordout
