@@ -1,4 +1,4 @@
-A_ID, B_ID
+A_ID (user getting reply) , B_ID (user that is replying)
 807095,73452506
 621533,2147604445
 209584092,888042960549552129
