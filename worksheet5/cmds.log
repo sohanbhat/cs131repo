@@ -1,0 +1,4 @@
+   14  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort -nr | uniq -c | sort -nr -k1 | head -1000 | awk '{print $2}' > top_thousand_reviewers.tsv
+   15  for i in `cat top_thousand_reviewers.tsv` ; do grep $i amazon_reviews_us_Books_v1_02.tsv > CUSTOMERS/$i.txt ; done
+   16  ls CUSTOMERS
+   17  history > cmds.log
