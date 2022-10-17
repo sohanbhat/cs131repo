@@ -1,0 +1,11 @@
+    6  script ws6.txt
+    7  #!/bin/bash
+    8  DATETIME=`date | sed 's/ //g'`
+    9  cp PRODUCTS/1592285570.txt PRODUCTS/1592285570.$DATETIME.txt
+   10  echo -e "sample\tsample\tsample\tsample\tsample\tsample\tsample\tsample\t6\tsample" >>  PRODUCTS/1592285570.$DATETIME.txt
+   11  cd PRODUCTS
+   12  ln -sf 1592285570.$DATETIME.txt 1592285570.LATEST.txt
+   13  crontab -e
+   14  crontab -l
+   15  ls
+   16  history > cmds.log
