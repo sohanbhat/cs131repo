@@ -1,10 +1,19 @@
 Script started on 2022-10-17 16:41:51-04:00
+1. Stored the datestamp in DATETIME variable and removed white space within datestamp using sed.
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ #!/bin/bash
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ DATETIME=`date | sed 's/ //g'`
+
+2. Using cp, copied PRODUCTS/1592285570.txt in file PRODUCTS/1592285570.$DATETIME.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ cp PRODUCTS/1592285570.txt PRODUCTS/1592285570.$DATETIME.txt
+
+3. Added row with helpfulness score by echoing to file with -e option, with helpfulness score in 9th column. See column 9 below with value 6. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ echo -e "sample\tsample\tsample\tsample\tsample\tsample\tsample\tsample\t6\tsample" >>  PRODUCTS/1592285570.$DATETIME.txt
+
+4. Made a symbolic link using ln -sf for 1592285570.LATEST.txt which points to 1592285570.$DATETIME.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ cd PRODUCTS
 ]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ ln -sf 1592285570.$DATETIME.txt 1592285570.LATEST.txt
+
+5. Created crontab for calculating average of helpfulness scores every minute, in the  9th column of PRODUCTS/1592285570.LATEST.txt and added the average in PRODUCTS/1592285570.AVGRATING.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ crontab -e
 "/tmp/crontab.u5zbWG" 1L, 190C[1;1H* * * * * cut -f9 /home/sohan/amazon/amazonbooks/PRODUCTS/1592285570.LATEST.txt | awk '{ sum += $1 } END { print sum/NR }' > /home/sohan/amazon/amazonbooks/PRODUCTS/1592285570.AVGRATING.txt
 [?25l[?2004l"/tmp/crontab.u5zbWG" 1L, 190C written
