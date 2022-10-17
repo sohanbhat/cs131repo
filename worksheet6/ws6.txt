@@ -14,8 +14,7 @@ Script started on 2022-10-17 16:41:51-04:00
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ cd PRODUCTS
 ]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ ln -sf 1592285570.$DATETIME.txt 1592285570.LATEST.txt
 
-5. Created crontab for calculating average of helpfulness scores every minute, in the 9th column of PRODUCTS/1592285570.LATEST.txt 
-and added the average in PRODUCTS/1592285570.AVGRATING.txt. 
+5. Created crontab for calculating average of helpfulness scores every minute, in the 9th column of PRODUCTS/1592285570.LATEST.txt and added the average in PRODUCTS/1592285570.AVGRATING.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ crontab -e
 "/tmp/crontab.u5zbWG" * * * * * cut -f9 /home/sohan/amazon/amazonbooks/PRODUCTS/1592285570.LATEST.txt | awk '{ sum += $1 } END { print sum/NR }' > /home/sohan/amazon/amazonbooks/PRODUCTS/1592285570.AVGRATING.txt
 "/tmp/crontab.u5zbWG" 1L, 190C written
