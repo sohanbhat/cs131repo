@@ -7,14 +7,14 @@ Script started on 2022-10-18 16:11:56-04:00
 2. Using cp, copied PRODUCTS/1592285570.txt in file PRODUCTS/1592285570.$DATETIME.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ cp PRODUCTS/1592285570.txt PRODUCTS/1592285570.$DATETIME.txt
 
-3. Added row with helpfulness score by echoing to file with -e option, with helpfulness score in 9th column. See column 9 below with value 6. 
+3. Added row with helpfulness score by echoing to file with -e option, with helpfulness score in 8th column. See column 8 below with value 4. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ echo -e "sample\tsample\tsample\tsample\tsample\tsample\tsample\t4\tsample\tsample" >>  PRODUCTS/1592285570.$DATETIME.txt
 
 4. Made a symbolic link using ln -sf for 1592285570.LATEST.txt which points to 1592285570.$DATETIME.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ cd PRODUCTS
 ]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ ln -sf 1592285570.$DATETIME.txt 1592285570.LATEST.txt
 
-5. Created crontab for calculating average of helpfulness scores every minute, in the 9th column of PRODUCTS/1592285570.LATEST.txt and added the average in PRODUCTS/1592285570.AVGRATING.txt. 
+5. Created crontab for calculating average of helpfulness scores every minute, in the 8th column of PRODUCTS/1592285570.LATEST.txt and added the average in PRODUCTS/1592285570.AVGRATING.txt. 
 ]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ crontab -e
 "/tmp/crontab.I8PKfu" 1L, 190C * * * * * cut -f8 /home/sohan/amazon/amazonbooks/PRODUCTS/1592285570.LATEST.txt | awk '{ sum += $1 } END { print sum/NR }' > /home/sohan/amazon/amazonbooks/PRODUCTS/1592285570.AVGRATING.txt
 "/tmp/crontab.I8PKfu" 1L, 190C written
