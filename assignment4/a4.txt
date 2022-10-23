@@ -254,6 +254,7 @@ There were 21 similarities.
 > cdnpoli
 > boycottrussia
 
+5. See Directed Graph of Retweets to User 15801906.png and Directed Graph of Replies to User 15801906.png. 
 6. I plotted three total plots: 
 1. Directed Graph of Retweets to User 15801906.png which shows the retweets received for User# 15801906. 
 Each node represents a different user who retweeted one of User 15801906 tweets.
