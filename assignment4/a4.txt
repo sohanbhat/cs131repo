@@ -199,9 +199,9 @@ There were 21 similarities.
     208 partygate
     206 ukrainian
     196 yyc
-^[]0;[sohan@sjsu A4]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -31 | tail -30 | awk '{print $2}'  > top_30_all.tsv
-^[]0;[sohan@sjsu A4]$ awk '{print $2}' top_30_retweets_counts.tsv > top_30_retweets_only.tsv
-^[]0;[sohan@sjsu A4]$ diff top_30_retweets_only.tsv top_30_all.tsv
+]0;[sohan@sjsu A4]$ cut -f4 downloaded_tweets_extend_nolf2.tsv | tr -d '"' | tr , '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -31 | tail -30 | awk '{print $2}'  > top_30_all.tsv
+]0;[sohan@sjsu A4]$ awk '{print $2}' top_30_retweets_counts.tsv > top_30_retweets_only.tsv
+]0;[sohan@sjsu A4]$ diff top_30_retweets_only.tsv top_30_all.tsv
 1,2c1,8
 < omicron
 < เจ้าแก้มก้อน
@@ -255,13 +255,14 @@ There were 21 similarities.
 > boycottrussia
 
 5. See Directed Graph of Retweets to User 15801906.png and Directed Graph of Replies to User 15801906.png. 
+
 6. I plotted three total plots: 
-1. Directed Graph of Retweets to User 15801906.png which shows the retweets received for User# 15801906. 
-Each node represents a different user who retweeted one of User 15801906 tweets.
-2. Directed Graph of Replies to User 15801906.png which shows the replies received for User# 15801906.
-Each node represents a different user who replied to User 15801906 tweets    
-3. retweets_histogram.png which is a histogram that shows the number of authors who received three 
-or more retweets. 
+	1. Directed Graph of Retweets to User 15801906.png which shows the retweets received for User# 15801906. 
+	Each node represents a different user who retweeted one of User 15801906 tweets.
+	2. Directed Graph of Replies to User 15801906.png which shows the replies received for User# 15801906.
+	Each node represents a different user who replied to User 15801906 tweets    
+	3. retweets_histogram.png which is a histogram that shows the number of authors who received three 
+	or more retweets. 
 
 ^[]0;sohan@sjsu:~/A4^G[sohan@sjsu A4]$ ^M
 ^[]0;sohan@sjsu:~/A4^G[sohan@sjsu A4]$ exit^M 
