@@ -1,0 +1,3 @@
+    4  script ws7.txt
+    5  cut -f14 1592285570.txt | sed -e 's/,//g;s/\.//g;s/;//g' | sed -e 's/ and //g;s/ or //g;s/ if //g;s/ in //g;s/ it //g' | sed -e 's/<[^>]*>//g'
+    6  history > cmds.log
