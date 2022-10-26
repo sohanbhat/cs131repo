@@ -1,8 +1,14 @@
 Script started on 2022-10-25 22:03:36-04:00
 
 
-1. I began by cutting for the review body column and used sed to remove all commas, dots, and semicolons in the given file using sed with the expression option specified. Then, to remove the stop words (and, or, if, in, it) I used the second sed prompt which looks for the stop words themselves which will always be preceded with a space. That way, if the sequence of the stop word was found within another word, it wouldn't be selected. Lastly, to remove html tags, I used the last sed expression which finds all sequences that begin with "<" and end with ">", while accounting for any characters in between "<" and ">".  
-]0;sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ cut -f14 1592285570.txt | sed -e 's/,//g;s/\.//g;s/;//g' | sed -e 's/ and //g;s/ or //g;s/ if //g;s/ in //g;s/ it //g' | sed -e 's/<[^>]*>//g'
+1. I began by cutting for the review body column and used sed to remove all commas, dots, and semicolons 
+in the given file using sed with the expression option specified. Then, to remove the stop words (and, or, if, in, it) 
+I used the second sed prompt which looks for the stop words themselves which will always be preceded with a space. 
+That way, if the sequence of the stop word was found within another word, it wouldn't be selected. Lastly, to remove html tags, 
+I used the last sed expression which finds all sequences that begin with "<" and end with ">", while accounting for any characters in between "<" and ">". 
+ 
+sohan@sjsu:~/amazon/amazonbooks/PRODUCTS[sohan@sjsu PRODUCTS]$ cut -f14 1592285570.txt | sed -e 's/,//g;s/\.//g;s/;//g' | sed -e 's/ and //g;s/ or //g;s/ if //g;s/ in //g;s/ it //g' | sed -e 's/<[^>]*>//g'
+
 Temple to the wind is a riveting account of the Reliance story I would also putright up there with SeabiscuitIn the Heart of the Sea The book is expertly writtenextremely well researched I found the biographical material about Herreshoff BarrLipton very interesting I especially enjoyed the fast paced play by play action of the races between RelianceShamrock III I highly recommend Temple to the Wind
 I'm a history buffhave not previously been a sailing buff -- BUT this book may make me one! If you're like me you will enjoy learning more about the time period the America's Cup races Sir Thomas Lipton Nathanael HerreshoffCharlie Barr  It's apparent that the author loves what he was researching/writing about becausemadea joy to read!
 This book was an entertaininginformative even for someone who generally tries to avoid the non-fiction aisle The book is packed with informationis clearly well researched -- who knew the America's Cup played such a big partthe history of this country Book was recommended by sailor but being one is certainly not a prerequisite (as I am proof positive)  Read this bookyou will be recommendingto your friendsfamily
