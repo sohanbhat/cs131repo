@@ -1,0 +1,40 @@
+Script started on 2022-11-02 01:29:32-04:00
+
+1. To ensure end result is returned in a timely manner, I used the first 10,000 lines of the dataset.
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ head -10000 amazon_reviews_us_Books_v1_02.tsv > first_hundred_amazon.tsv
+
+2. To get the verified reviews within the dataset I used awk on the 12th column and printed the 14th column containing all the reviews.
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk -F'\t' '$12 == "Y" {print $14}' first_hundred_amazon.tsv > verified.txt
+
+3. Similarly, to get the unverified reviews within the dataset I used awk on the 12th column and printed the 14th column containing all the reviews.
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk -F'\t' '$12 == "N" {print $14}' first_hundred_amazon.tsv > unverified.txt
+
+4. To get the top 10 most used words for verified reviews, I used awk, along with gsub to remove html tags, slashes, periods, commas, quote characters, and single letters with spaces such as ("I" , "A"). Then, I used an array to find total counts of each word in the set and printed them. Lastly, I used fgrep to remove stop words from the word counts and sorted the output to get the top 10 most used words.
+
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' verified.ttxt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
+book,2757
+read,795
+has,724
+her,506
+great,390
+books,382
+story,368
+she,366
+reading,299
+really,291
+
+5. To get the top 10 most used words for UNverified reviews, I used awk, along with gsub to remove html tags, slashes, periods, commas, quote characters, and single letters with spaces such as ("I" , "A"). Then, I used an array to find total counts of each word in the set and printed them. Lastly, I used fgrep to remove stop words from the word counts and sorted the output to get the top 10 most used words.
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' unverifiedd.txt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
+book,16079
+her,5210
+read,5082
+has,4504
+she,3435
+story,3055
+life,2429
+great,2341
+books,2294
+really,1945
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ exit
+
+Script done on 2022-11-02 01:29:48-04:00

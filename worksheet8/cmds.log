@@ -1,0 +1,7 @@
+  286  script ws8.txt
+  287  head -10000 amazon_reviews_us_Books_v1_02.tsv > first_hundred_amazon.tsv
+  288  awk -F'\t' '$12 == "Y" {print $14}' first_hundred_amazon.tsv > verified.txt
+  289  awk -F'\t' '$12 == "N" {print $14}' first_hundred_amazon.tsv > unverified.txt
+  290  awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' verified.txt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
+  291  awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' unverified.txt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
+  292  history > cmds.log
