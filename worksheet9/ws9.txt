@@ -1,6 +1,6 @@
 Script started on 2022-11-08 21:43:12-05:00
 
-1. To produce a random X% subset of lines within the amazon dataset, I used six variables within my script (see below):
+1. To produce a random X% subset of lines within the amazon dataset, I used six variables within my script (see below and in the repo):
 	a. index was used to track the current index of the while loop
 	b. total was used to track the total number of lines within the input file
 	c. readTotal was used to multiply the inputted percentage to the total. 
