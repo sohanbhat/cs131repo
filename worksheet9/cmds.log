@@ -1,0 +1,5 @@
+   22  script ws9.txt
+   23  cat wksht9Sohan.sh 
+   24  . wksht9Sohan.sh 10 shortened_rev_amazon.tsv
+   25  . wksht9Sohan.sh 10 shortened_rev_amazon.tsv | wc
+   26  history > cmds.log
