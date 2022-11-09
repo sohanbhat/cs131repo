@@ -32,6 +32,7 @@ while [ $index -le $finalrange ]
 	done
 
 2. Below, I ran the script on 10% of a shortened amazon reviews file containing only the first 100 reviews called shortened_rev_amazon.tsv. 
+It returned a random list of reviews within the subset, using randomly generated line numbers to extract lines in a random manner. 
 sohan@sjsu:/mnt/scratch/sohan[sohan@sjsu sohan]$ . wksht9Sohan.sh 10 shortened_rev_amazon.tsv
 US 49441053 R34X92SSRBI0N4 0966170229 396093604 PowerNomics : The National Plan to Empower Black America Books 5 26 29 N N Live on your feet or die on your knees Mr. Andersons' book provides a thorough examination, diagnosis, and best possible cure for what ails black america. Not poor whites, hispanics, arabs, jews, gays, or white women. You owe it to you and your family to at least check out the facts of this examination and then decide. <br /> <br />White america has always put their modus operandi in our face; this is our society, these are our rules, do the best you can with what we decide to give you; don't bother me while I make my money. If you do, the police will handle you. <br /> <br />Here is Black americas' call to focus on what should have been the legacy of civil rights - economic empowerment. 2005-10-14
 US 16234962 R2R85IQZ0KZTIS 0060875410 122518901 The FairTax Book Books 5 11 12 N N Great book This is a very important book. We need to change the current tax system and this book will answer all your questions. 2005-10-14
