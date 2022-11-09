@@ -1,16 +1,16 @@
 Script started on 2022-11-08 21:43:12-05:00
 
 1. To produce a random X% subset of lines within the amazon dataset, I used six variables:
-a. index was used to track the current index of the while loop
-b. total was used to track the total number of lines within the input file
-c. readTotal was used to multiply the inputted percentage to the total. 
-d. finalrange divides readTotal by 100, since the input is a percentage and needs to be divided by 100 to represent the total lines to be randomly printed out.
-e. lineval was used within the while loop to produce a random line number within the range of file
-f. textLine was used to retrieve the nth line using sed, which was produced by the random line generator 
+	a. index was used to track the current index of the while loop
+	b. total was used to track the total number of lines within the input file
+	c. readTotal was used to multiply the inputted percentage to the total. 
+	d. finalrange divides readTotal by 100, since the input is a percentage and needs to be divided by 100 to represent the total lines to be randomly 	   printed out.
+	e. lineval was used within the while loop to produce a random line number within the range of file
+	f. textLine was used to retrieve the nth line using sed, which was produced by the random line generator 
 
-#Note that in each iteration of the while loop, the value of lineval produces a new random number.
-The while loop continues till the index is equal to finalval, which contains the total lines to iterate through based upon input percentage.
-See 2. for output.
+	Note that in each iteration of the while loop, the value of lineval produces a new random number.
+	The while loop continues till the index is equal to finalval, which contains the total lines to iterate through based upon input percentage.
+	See 2. for output.
 sohan@sjsu:/mnt/scratch/sohan[sohan@sjsu sohan]$ cat wksht9Sohan.sh
 #!/bin/bash/
 
