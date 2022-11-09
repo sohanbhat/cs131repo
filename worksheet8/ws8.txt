@@ -9,9 +9,9 @@ Script started on 2022-11-02 01:29:32-04:00
 3. Similarly, to get the unverified reviews within the dataset I used awk on the 12th column and printed the 14th column containing all the reviews.
 ]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk -F'\t' '$12 == "N" {print $14}' first_hundred_amazon.tsv > unverified.txt
 
-4. To get the top 10 most used words for verified reviews, I used awk, along with gsub to remove html tags, slashes, periods, commas, quote characters, and single letters with spaces such as ("I" , "A"). Then, I used an array to find total counts of each word in the set and printed them. Lastly, I used fgrep to remove stop words from the word counts and sorted the output to get the top 10 most used words.
-
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' verified.ttxt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
+4. To get the top 10 most used words for verified reviews, I used awk, along with gsub to remove html tags, slashes,  periods, commas, quote characters, and single letters with spaces such as ("I" , "A"). Then, I used an array to find total  counts of each word in the set and printed them. Lastly, I used fgrep to remove stop words from the word counts and sorted  the output to get the top 10 most used words.
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' verified.t
+txt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
 book,2757
 read,795
 has,724
@@ -23,8 +23,9 @@ she,366
 reading,299
 really,291
 
-5. To get the top 10 most used words for UNverified reviews, I used awk, along with gsub to remove html tags, slashes, periods, commas, quote characters, and single letters with spaces such as ("I" , "A"). Then, I used an array to find total counts of each word in the set and printed them. Lastly, I used fgrep to remove stop words from the word counts and sorted the output to get the top 10 most used words.
-]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' unverifiedd.txt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
+5. To get the top 10 most used words for UNverified reviews, I used awk, along with gsub to remove html tags, slashes,  periods, commas, quote characters, and single letters with spaces such as ("I" , "A"). Then, I used an array to find total  counts of each word in the set and printed them. Lastly, I used fgrep to remove stop words from the word counts and sorted  the output to get the top 10 most used words.
+]0;sohan@sjsu:~/amazon/amazonbooks[sohan@sjsu amazonbooks]$ awk '{gsub(","," ",$0); gsub("\\."," ",$0); gsub("<[^>]*>"," ",$0); gsub("\\\\"," ",$0); gsub(" [a-z] "," ",$0); gsub("-"," ",$0); gsub(/"/," ",$0); print tolower($0)}' unverified
+d.txt | awk '{for(i=1; i <= NF; i++) wordCounts[$i]++} END { for (i in wordCounts) print i","wordCounts[i]}' | fgrep -v -w -f /usr/share/groff/current/eign |  sort -nr -t ',' -k2 | head -10
 book,16079
 her,5210
 read,5082
