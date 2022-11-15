@@ -1,0 +1,5 @@
+    6  script ws10.txt
+    7  time python3 numbers.py
+    8  time . numbers.sh
+    9  cat numbers.sh
+   10  history > cmds.log

@@ -1,0 +1,44 @@
+Script started on 2022-11-15 02:06:59-05:00
+
+1. I ran the python script in numbers.py using the python3 command. 
+]0;sohan@sjsu:/mnt/scratch/sohan[sohan@sjsu sohan]$ time python3 numbers.py
+min 0 max 15835 avg 9.33467921636312
+
+real	0m19.651s
+user	0m18.880s
+sys	0m0.770s
+
+2. I ran the shell script that performs the same function of the python script, 
+which is to calculate the minimum, maximum, and average of the 9th column of the amazon
+reviews dataset containing helpful votes. 
+]0;sohan@sjsu:/mnt/scratch/sohan[sohan@sjsu sohan]$ time . numbers.sh
+min 0 max 15835 average 9.33468
+
+real	0m20.274s
+user	0m19.953s
+sys	0m0.320s
+
+3. The shell script ran marginally slower than the python program based on real / user times. However,
+the sys metric of the shell script was half of the python program, which indicates it spent half as
+much time in the kernel mode. Generally however, I believe shell scripts run faster than python scripts.  
+]0;sohan@sjsu:/mnt/scratch/sohan[sohan@sjsu sohan]$ cat numbers.sh
+#!/bin/bash
+#Author: Sohan B.
+
+awk -F'\t' '
+BEGIN{
+	high=0;
+	total=0;
+}
+NR>1{
+	if(NR==2) low=$9; 
+	else if($9>high) high=$9; 
+	else if($9<low) low=$9;
+	total+=$9
+}
+END{
+	print "min " low, "max " high, "average " total/NR;
+}' amazon_reviews_us_Books_v1_02.tsv 
+]0;sohan@sjsu:/mnt/scratch/sohan[sohan@sjsu sohan]$ exit
+
+Script done on 2022-11-15 02:08:33-05:00
