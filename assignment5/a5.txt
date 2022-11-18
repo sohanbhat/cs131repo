@@ -62,7 +62,7 @@ do
 done
 
 [sohan@sjsu twitter]$ . retweetFrequencies.sh > retweets_hashtag_freqs.csv
-[sohan@sjsu twitter]$ sed 's/,/\t/g' retweets_hashtag_freqs.csv | column -t > retweets_hashtag_freqs.tsv
+[sohan@sjsu twitter]$ sed 's/,/\t/g' retweets_hashtag_freqs.csv > retweets_hashtag_freqs.tsv
 
 2. To find the all the replies that are part of the cluster of authors receiving three or more replies, I performed the following steps:
 a. I began by using grep to filter for replies in the original file, removing bots, and cutting for the 1st, 2nd, 4th, and 6th columns
@@ -117,7 +117,7 @@ do
 
 done
 [sohan@sjsu twitter]$ . repliesFrequencies.sh > replies_hashtag_freqs.csv
-[sohan@sjsu twitter]$  sed 's/,/\t/g' replies_hashtag_freqs.csv | column -t > replies_hashtag_freqs.tsv
+[sohan@sjsu twitter]$  sed 's/,/\t/g' replies_hashtag_freqs.csv > replies_hashtag_freqs.tsv
 
 
 3. To find which hashtags were found disproportionally in the retweets file, I used the tables produced for 
