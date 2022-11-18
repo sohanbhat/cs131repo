@@ -1,8 +1,8 @@
 #!/bin/bash
 echo hashtag_H, cluster_C_leader_user_id, relative_frequency_H_C, frequency_H_in_C, frequency_H_overall, count_H_in_C, count_tweets_in_C, count_H_entire_dataset, count_tweets_entire_dataset
 
-total_hashtags_entire_dataset=$(cut -f3 replies_cleaned.tsv | tr , '\n' | wc |  awk '{print $1}')
-total_hashtags_in_cluster=$(wc hashtags_for_replies_full.tsv | awk '{print $1}')
+total_hashtags_entire_dataset=$(cut -f3 replies_cleaned.tsv | sed 's/[""]//g'| tr , '\n' | wc |  awk '{print $1}')
+total_hashtags_in_cluster=$(cut -f3 three_or_more.tsv |  sed 's/[""]//g' | tr '[:upper:]' '[:lower:]' | tr , '\n' | sort | wc | awk '{print $1}')
 
 for i in `cat hashtags_for_replies_full.tsv`
 do
