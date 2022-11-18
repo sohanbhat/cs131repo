@@ -1,6 +1,5 @@
 Script started on 2022-11-14 00:53:14-05:00
 
-
 1. To find the all the retweets that are part of the cluster of authors receiving three or more retweets, I performed the following steps:
 a. I began by using grep to filter for retweets in the main tweet file and cutting the fifth column which contains the id of the tweet 
 which was being retweeted.
