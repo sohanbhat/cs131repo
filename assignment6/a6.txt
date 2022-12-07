@@ -1,6 +1,6 @@
 Script started on 2022-12-06 18:26:42-05:00
 
-**Data Preparation Step** To find all the replies from both the original and nolf2 file, I used grep to find all "replied_to" tweets and awk to remove all
+** Data Preparation Step ** To find all the replies from both the original and nolf2 file, I used grep to find all "replied_to" tweets and awk to remove all
 the bots from the file. I stored the results within downloaded_tweets_extend_original_nolf2_REPLIES.NOBOTS.tsv and downloaded_tweets_extend_original_nolf2_REPLIES.NOBOTS.tsv
 respectively. Then, I used cat to combine the replies found in both files and stored it in replies_all.tsv. Then, using sort with the unique option,
 on the tweet ID column, I removed all duplicates found in both files. Then, I found the authors who received three or more replies by using cut
